@@ -1,0 +1,43 @@
+﻿@using MiPrimerAplicacion.Models
+@model List<ClienteCLS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Clientes</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>@Html.LabelFor(p => Model[0].iidclinete)</td>
+            <td>@Html.LabelFor(p => Model[0].nombre)</td>
+            <td>@Html.LabelFor(p => Model[0].appaterno)</td>
+            <td>@Html.LabelFor(p => Model[0].apmaterno)</td>
+            <td>@Html.LabelFor(p => Model[0].email)</td>
+            <td>@Html.LabelFor(p => Model[0].direccion)</td>
+            <td>@Html.LabelFor(p => Model[0].iidsexo)</td>
+            <td>@Html.LabelFor(p => Model[0].telefonofijo)</td>
+            <td>@Html.LabelFor(p => Model[0].telefonocelular)</td>
+            <td>@Html.LabelFor(p => Model[0].bhabilitado)</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.iidclinete</td>
+            <td>@item.nombre</td>
+            <td>@item.apmaterno</td>
+            <td>@item.apmaterno</td>
+            <td>@item.email</td>
+            <td>@item.direccion</td>
+            <td>@item.iidclinete</td>
+            <td>@item.telefonofijo</td>
+            <td>@item.telefonocelular</td>
+            <td>@item.bhabilitado</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
