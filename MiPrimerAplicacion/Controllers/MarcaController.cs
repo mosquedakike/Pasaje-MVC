@@ -26,5 +26,17 @@ namespace MiPrimerAplicacion.Controllers
             }
             return View(listaMarca);
         }
+
+        //vista agregar
+        public ActionResult Agregar()
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        //public ActionResult Agregar()
+        //{
+        //    return View();
+        //}
     }
 }
