@@ -27,7 +27,7 @@ namespace MiPrimerAplicacion.Controllers
             return View(listaMarca);
         }
 
-        //vista agregar
+        //vista agregar (insert)
         [HttpPost]
         public ActionResult Agregar(MarcaCLS oMarcaCLS)
         {
@@ -50,6 +50,7 @@ namespace MiPrimerAplicacion.Controllers
             return RedirectToAction("Index");
         }
 
+        //muestra la vista
         public ActionResult Agregar()
         {
             return View();

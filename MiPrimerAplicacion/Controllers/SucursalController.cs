@@ -30,5 +30,10 @@ namespace MiPrimerAplicacion.Controllers
             }
             return View(listaSucursal);
         }
+
+        public ActionResult Agregar()
+        {
+            return View();
+        }
     }
 }
