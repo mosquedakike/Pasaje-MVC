@@ -13,7 +13,7 @@ namespace MiPrimerAplicacion.Controllers
         public ActionResult Index()
         {
             List<ClienteCLS> listaCliente = null;
-            using (var bd = new BDPasajeEntities())
+            using (var bd = new BDPasajesEntities())
             {
                 listaCliente = (from cliente in bd.Cliente
                                 where cliente.BHABILITADO == 1

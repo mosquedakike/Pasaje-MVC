@@ -13,7 +13,7 @@ namespace MiPrimerAplicacion.Controllers
         public ActionResult Index()
         {
             List<MarcaCLS> listaMarca = null;
-            using (var bd = new BDPasajeEntities())
+            using (var bd = new BDPasajesEntities())
             {
                 listaMarca = (from marca in bd.Marca
                               where marca.BHABILITADO == 1
@@ -28,15 +28,31 @@ namespace MiPrimerAplicacion.Controllers
         }
 
         //vista agregar
+        [HttpPost]
+        public ActionResult Agregar(MarcaCLS oMarcaCLS)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(oMarcaCLS);
+            }
+            else
+            {
+                using (var db = new BDPasajesEntities())
+                { 
+                    Marca oMarca = new Marca();
+                    oMarca.NOMBRE = oMarcaCLS.nombre;
+                    oMarca.DESCRIPCION = oMarcaCLS.descripcion;
+                    oMarca.BHABILITADO = 1;
+                    db.Marca.Add(oMarca);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Agregar()
         {
             return View();
         }
-
-        //[HttpPost]
-        //public ActionResult Agregar()
-        //{
-        //    return View();
-        //}
     }
 }

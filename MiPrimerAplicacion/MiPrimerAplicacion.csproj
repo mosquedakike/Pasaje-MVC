@@ -136,82 +136,82 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Asiento.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDPasaje.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPasaje.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDPasaje.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDPasaje.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPasaje.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Bus.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClienteCLS.cs" />
-    <Compile Include="Models\DBPasajes.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBPasajes.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBPasajes.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBPasajes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBPasajes.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBPasajes.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\DETALLEVENTA.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Empleado.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Lugar.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Marca.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MarcaCLS.cs" />
     <Compile Include="Models\Modelo.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Pagina.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Rol.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RolPagina.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sexo.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sucursal.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SucursalCLS.cs" />
     <Compile Include="Models\TipoBus.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoContrato.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoUsuario.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TIPOUSUARIOREGISTRO.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VENTA.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Viaje.cs">
-      <DependentUpon>DBPasajes.tt</DependentUpon>
+      <DependentUpon>BDPasaje.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -224,24 +224,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\DBPasajes.Context.tt">
+    <Content Include="Models\BDPasaje.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBPasajes.Context.cs</LastGenOutput>
-      <DependentUpon>DBPasajes.edmx</DependentUpon>
+      <DependentUpon>BDPasaje.edmx</DependentUpon>
+      <LastGenOutput>BDPasaje.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DBPasajes.tt">
+    <Content Include="Models\BDPasaje.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBPasajes.edmx</DependentUpon>
-      <LastGenOutput>DBPasajes.cs</LastGenOutput>
+      <DependentUpon>BDPasaje.edmx</DependentUpon>
+      <LastGenOutput>BDPasaje.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DBPasajes.edmx">
+    <EntityDeploy Include="Models\BDPasaje.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBPasajes.Designer.cs</LastGenOutput>
+      <LastGenOutput>BDPasaje.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DBPasajes.edmx.diagram">
-      <DependentUpon>DBPasajes.edmx</DependentUpon>
+    <Content Include="Models\BDPasaje.edmx.diagram">
+      <DependentUpon>BDPasaje.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

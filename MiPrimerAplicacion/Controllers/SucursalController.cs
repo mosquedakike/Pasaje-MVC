@@ -13,7 +13,7 @@ namespace MiPrimerAplicacion.Controllers
         public ActionResult Index()
         {
             List<SucursalCLS> listaSucursal = null;
-            using (var bd = new BDPasajeEntities())
+            using (var bd = new BDPasajesEntities())
             {
                 listaSucursal = (from sucursal in bd.Sucursal
                                  where sucursal.BHABILITADO == 1
