@@ -21,7 +21,7 @@ namespace MiPrimerAplicacion.Models
         [Required]
         [StringLength(200)]
         public string direccion { get; set; }
-        
+
         [Display(Name = "Telefono")]
         [Required]
         [StringLength(10)]
@@ -34,6 +34,7 @@ namespace MiPrimerAplicacion.Models
 
         [Display(Name = "Fecha de apertura")]
         [Required]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime fechaapertura { get; set; }
 

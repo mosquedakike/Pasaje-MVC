@@ -31,6 +31,31 @@ namespace MiPrimerAplicacion.Controllers
             return View(listaSucursal);
         }
 
+        [HttpPost]
+        public ActionResult Agregar(SucursalCLS oSucursalCLS)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(oSucursalCLS);
+            }
+            else
+            {
+                using (var db = new BDPasajesEntities())
+                {
+                    Sucursal oSucursal = new Sucursal();
+                    oSucursal.NOMBRE = oSucursalCLS.nombre;
+                    oSucursal.DIRECCION = oSucursalCLS.direccion;
+                    oSucursal.TELEFONO = oSucursalCLS.telefono;
+                    oSucursal.EMAIL = oSucursalCLS.email;
+                    oSucursal.FECHAAPERTURA = oSucursalCLS.fechaapertura;
+                    oSucursal.BHABILITADO = 1;
+                    db.Sucursal.Add(oSucursal);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Agregar()
         {
             return View();
