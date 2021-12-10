@@ -67,7 +67,7 @@ namespace MiPrimerAplicacion.Controllers
         {
             using (var db = new BDPasajesEntities())
             {
-                listaSexo = (from sexo in db.Cliente
+                listaSexo = (from sexo in db.Sexo
                             where sexo.BHABILITADO == 1
                             select new SelectListItem
                             { 

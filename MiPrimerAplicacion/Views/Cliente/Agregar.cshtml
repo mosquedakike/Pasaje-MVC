@@ -40,8 +40,7 @@
             </div>
             <div>
                 @Html.LabelFor(p => p.iidsexo)
-                @*@Html.DropDownList("sexo","iidsexo")*@
-                @Html.TextBoxFor(p => p.iidsexo, new { @class = "form-control" })
+                @Html.DropDownList("iidsexo",listaSexo,null, new { @class="form-control"})
                 @Html.ValidationMessage("iidsexo", new { @class = "text-danger" })
             </div>
             <div>
