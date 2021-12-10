@@ -33,5 +33,55 @@ namespace MiPrimerAplicacion.Controllers
             }
             return View(listaCliente);
         }
+
+        [HttpPost]
+        public ActionResult Agregar(ClienteCLS oClienteCLS)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(oClienteCLS);
+            }
+            else
+            {
+                using (var db = new BDPasajesEntities())
+                {
+                    Cliente oCliente = new Cliente();
+                    oCliente.NOMBRE = oClienteCLS.nombre;
+                    oCliente.APPATERNO = oClienteCLS.appaterno;
+                    oCliente.APMATERNO = oClienteCLS.apmaterno;
+                    oCliente.EMAIL = oClienteCLS.email;
+                    oCliente.DIRECCION = oClienteCLS.direccion;
+                    oCliente.IIDSEXO = oClienteCLS.iidsexo;
+                    oCliente.TELEFONOFIJO = oClienteCLS.telefonofijo;
+                    oCliente.TELEFONOCELULAR = oClienteCLS.telefonocelular;
+                    oCliente.BHABILITADO = 1;
+                    db.Cliente.Add(oCliente);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        List<SelectListItem> listaSexo;
+        private void llenadoSexo() 
+        {
+            using (var db = new BDPasajesEntities())
+            {
+                listaSexo = (from sexo in db.Cliente
+                            where sexo.BHABILITADO == 1
+                            select new SelectListItem
+                            { 
+                                Text=sexo.NOMBRE,
+                                Value=sexo.IIDSEXO.ToString()
+                            }).ToList();
+            }
+        }
+
+        public ActionResult Agregar()
+        {
+            llenadoSexo();
+            ViewBag.lista = listaSexo;
+            return View();
+        }
     }
 }

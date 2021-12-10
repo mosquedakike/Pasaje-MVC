@@ -29,6 +29,7 @@ namespace MiPrimerAplicacion.Models
 
         [Display(Name = "Correo electronico")]
         [Required]
+        [EmailAddress(ErrorMessage ="Ingrese un email valido")]
         [StringLength(100)]
         public string email { get; set; }
 

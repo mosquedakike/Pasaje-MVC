@@ -8,25 +8,50 @@ namespace MiPrimerAplicacion.Models
 {
     public class ClienteCLS
     {
-        [Display(Name="Id")]
+        [Display(Name = "Id")]
         public int iidclinete { get; set; }
-        [Display(Name="Nombre")]
+
+        [Display(Name = "Nombre")]
+        [StringLength(100,ErrorMessage ="La longitud maxima es de 100")]
+        [Required]
         public string nombre { get; set; }
-        [Display(Name="Apellido Paterno")]
+
+        [Display(Name = "Apellido Paterno")]
+        [StringLength(150,ErrorMessage ="La longitud maxima es de 150")]
+        [Required]
         public string appaterno { get; set; }
-        [Display(Name ="Apellido Materno")]
+
+        [Display(Name = "Apellido Materno")]
+        [StringLength(150, ErrorMessage ="La longitud maxima es de 150")]
+        [Required]
         public string apmaterno { get; set; }
-        [Display(Name ="Correo")]
+
+        [Display(Name = "Correo")]
+        [EmailAddress(ErrorMessage ="Ingrese un correo valido")]
+        [Required]
         public string email { get; set; }
-        [Display(Name="Direccion")]
+
+        [Display(Name = "Direccion")]
+        [Required]
+        [StringLength(200,ErrorMessage ="La longitud maxima es 200")]
         public string direccion { get; set; }
-        [Display(Name ="Sexo")]
+
+        [Display(Name = "Sexo")]
+        [Required]
         public int iidsexo { get; set; }
+
         [Display(Name = "Telefono fijo")]
+        [Required]
+        [StringLength(10,ErrorMessage ="La logitud maxima es 10")]
         public string telefonofijo { get; set; }
+
         [Display(Name ="Telefono celular")]
+        [Required]
+        [StringLength(10,ErrorMessage ="La longitud maxima es 10")]
         public string telefonocelular { get; set; }
+
         [Display(Name ="Estatus")]
+        [Required]
         public int bhabilitado { get; set; }
 
     }
