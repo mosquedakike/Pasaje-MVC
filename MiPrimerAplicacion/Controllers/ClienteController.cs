@@ -39,6 +39,8 @@ namespace MiPrimerAplicacion.Controllers
         {
             if (!ModelState.IsValid)
             {
+                llenadoSexo();
+                ViewBag.lista = listaSexo;
                 return View(oClienteCLS);
             }
             else
