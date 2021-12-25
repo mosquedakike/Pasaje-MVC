@@ -74,6 +74,7 @@ namespace MiPrimerAplicacion.Controllers
                                 Text=sexo.NOMBRE,
                                 Value=sexo.IIDSEXO.ToString()
                             }).ToList();
+                listaSexo.Insert(0,new SelectListItem{ Text = "--Seleccione--",Value = ""});
             }
         }
 
