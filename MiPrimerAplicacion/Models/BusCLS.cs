@@ -16,6 +16,11 @@ namespace MiPrimerAplicacion.Models
         [Required]
         public int iidtipobus { get; set; }
 
+        [Display(Name = "Placa")]
+        [StringLength(100, ErrorMessage = "Longitud maxima 100")]
+        [Required]
+        public string placa { get; set; }
+
         [Display(Name = "Fecha de compra")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

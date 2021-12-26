@@ -19,6 +19,7 @@ namespace MiPrimerAplicacion.Controllers
                     from empleado in db.Empleado
                     join tipousuario in db.TipoUsuario on empleado.IIDTIPOUSUARIO equals tipousuario.IIDTIPOUSUARIO
                     join tipocontrato in db.TipoContrato on empleado.IIDTIPOCONTRATO equals tipocontrato.IIDTIPOCONTRATO
+                    where empleado.BHABILITADO == 1
                     select new EmpleadoCLS
                     {
                         iidEmpleado = empleado.IIDEMPLEADO,
