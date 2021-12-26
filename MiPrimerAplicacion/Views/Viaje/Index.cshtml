@@ -1,7 +1,31 @@
-﻿
+﻿@using MiPrimerAplicacion.Models
+@model List<ViajeCLS>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Viaje</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <td>@Html.LabelFor(p=>Model[0].iidviaje)</td>
+        <td>@Html.LabelFor(p=>Model[0].nombrelugarorigen)</td>
+        <td>@Html.LabelFor(p=>Model[0].nombrelugardestino)</td>
+        <td>@Html.LabelFor(p=>Model[0].nombrebus)</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.iidviaje</td>
+            <td>@item.nombrelugarorigen</td>
+            <td>@item.nombrelugardestino</td>
+            <td>@item.nombrebus</td>
+        </tr>
+    }
+    </tbody>
+</table>
 

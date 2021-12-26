@@ -44,7 +44,7 @@ namespace MiPrimerAplicacion.Models
         [Display(Name = "Lugar destino")]
         public string nombrelugardestino { get; set; }
 
-        [Display(Name = "Nombre buss")]
+        [Display(Name = "Nombre bus")]
         public string nombrebus { get; set; }
     }
 }

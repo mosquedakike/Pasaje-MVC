@@ -29,7 +29,7 @@ namespace MiPrimerAplicacion.Controllers
                         nombrebus = bus.PLACA
                     }).ToList();
             }
-            return View();
+            return View(listaViaje);
         }
     }
 }
