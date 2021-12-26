@@ -9,13 +9,14 @@ namespace MiPrimerAplicacion.Controllers
 {
     public class EmpleadoController : Controller
     {
-        // GET
+        // GET Empleado
         public ActionResult Index()
         {
             List<EmpleadoCLS> listaEmpleado = null;
             using (var db = new BDPasajesEntities())
             {
-                listaEmpleado = (from empleado in db.Empleado
+                listaEmpleado = (
+                    from empleado in db.Empleado
                     join tipousuario in db.TipoUsuario on empleado.IIDTIPOUSUARIO equals tipousuario.IIDTIPOUSUARIO
                     join tipocontrato in db.TipoContrato on empleado.IIDTIPOCONTRATO equals tipocontrato.IIDTIPOCONTRATO
                     select new EmpleadoCLS
@@ -28,7 +29,7 @@ namespace MiPrimerAplicacion.Controllers
                         nombreTipoContrato = tipocontrato.NOMBRE
                     }).ToList();
             }
-            return View();
+            return View(listaEmpleado);
         }
     }
 }

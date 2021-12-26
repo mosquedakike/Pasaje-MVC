@@ -49,7 +49,10 @@ namespace MiPrimerAplicacion.Models
 
 
         //propiedades adicionales
+        [Display(Name = "Contrato")]
         public string nombreTipoContrato { get; set; }
+
+        [Display(Name = "Usuario")]
         public string nombreTipoUsuario { get; set; }
 
     }
