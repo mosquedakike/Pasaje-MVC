@@ -8,14 +8,18 @@
 <h2>Marcas</h2>
 
 @* agregamos un link en forma de boton que direccione a la vista Agregar *@
-@Html.ActionLink("Agregar","Agregar","Marca",null,new { @class="btn btn-primary" })
-
+<div>
+    @Html.ActionLink("Agregar","Agregar","Marca",null,new { @class="btn btn-primary" })    
+</div>
+<br/>
 <table class="table table-bordered table-hover">
     <thead>
-        <tr>
-            <td width="10%">@Html.LabelFor(p=>Model[0].iidmarca)</td>
-            <td width="20%">@Html.LabelFor(p=>Model[0].nombre)</td>
-            <td width="70%">@Html.LabelFor(p=>Model[0].descripcion)</td>
+        <tr style="background-color: #eeeeee">
+            <td>@Html.LabelFor(p=>Model[0].iidmarca)</td>
+            <td>@Html.LabelFor(p=>Model[0].nombre)</td>
+            <td>@Html.LabelFor(p=>Model[0].descripcion)</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +29,10 @@
             <td>@item.iidmarca</td>
             <td>@item.nombre</td>
             <td>@item.descripcion</td>
+            <td> @Html.ActionLink(" ", "Editar", "Marca", new {id = @item.iidmarca},
+                     new {@class = "glyphicon glyphicon-edit btn btn-primary"})</td>
+            <td>@Html.ActionLink(" ","Eliminar","Marca", new {id=@item.iidmarca},
+                    new {@class="glyphicon glyphicon-trash btn btn-danger"})</td>
         </tr>
         }
     </tbody>
