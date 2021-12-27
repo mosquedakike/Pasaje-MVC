@@ -1,0 +1,21 @@
+﻿@using MiPrimerAplicacion.Models
+@model EmpleadoCLS
+
+@{
+    ViewBag.Title = "Agregar";
+    List<SelectListItem> listaSexo = (List<SelectListItem>) ViewBag.listaSexo;
+    List<SelectListItem> listatipousuario = (List<SelectListItem>) ViewBag.listatipousuario;
+    List<SelectListItem> listatipocontrato = (List<SelectListItem>) ViewBag.listatipocontrato;
+}
+
+<h2>title</h2>
+
+<div>
+    <div>
+        @using (Html.BeginForm("Agregar","Cliente", FormMethod.Post))
+        {
+            <div>
+            </div>
+        }
+    </div>
+</div>

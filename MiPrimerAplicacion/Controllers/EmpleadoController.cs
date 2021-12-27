@@ -32,5 +32,71 @@ namespace MiPrimerAplicacion.Controllers
             }
             return View(listaEmpleado);
         }
+
+        public void listarComboSexo()
+        {
+            //agregar
+            List<SelectListItem> lista;
+            using (var db = new BDPasajesEntities())
+            {
+                lista = (from sexo in db.Sexo
+                    where sexo.BHABILITADO == 1
+                    select new SelectListItem
+                    {
+                        Text = sexo.NOMBRE,
+                        Value = sexo.IIDSEXO.ToString()
+                    }).ToList();
+                lista.Insert(0,new SelectListItem{ Text = "--Seleccione--", Value = ""});
+                ViewBag.listaSexo = lista;
+            }
+        }
+
+        public void litarTipoUsuario()
+        {
+            //agregar
+            List<SelectListItem> lista;
+            using (var db = new BDPasajesEntities())
+            {
+                lista = (from tipousuario in db.TipoUsuario
+                    where tipousuario.BHABILITADO == 1
+                    select new SelectListItem
+                    {
+                        Text = tipousuario.NOMBRE,
+                        Value = tipousuario.IIDTIPOUSUARIO.ToString()
+                    }).ToList();
+                lista.Insert(0,new SelectListItem{ Text = "--Seleccione--", Value = ""});
+                ViewBag.listatipousuario = lista;
+            }
+        }
+
+        public void listarTipoContrato()
+        {
+            List<SelectListItem> lista;
+            using (var db = new BDPasajesEntities())
+            {
+                lista = (from tipocontrato in db.TipoContrato
+                    where tipocontrato.BHABILITADO == 1
+                    select new SelectListItem
+                    {
+                        Text = tipocontrato.NOMBRE,
+                        Value = tipocontrato.IIDTIPOCONTRATO.ToString()
+                    }).ToList();
+                lista.Insert(0, new SelectListItem{ Text = "--Seleccion--", Value = ""});
+                ViewBag.listatipocontrato = lista;
+            }
+        }
+
+        public void listarCombos()
+        {
+            listarComboSexo();
+            litarTipoUsuario();
+            listarTipoContrato();
+        }
+
+        public ActionResult Agregar()
+        {
+            listarCombos();
+            return View();
+        }
     }
 }
