@@ -50,6 +50,7 @@ namespace MiPrimerAplicacion.Controllers
                     oEmpleado.APPATERNO = oEmpleadoCLS.apPaterno;
                     oEmpleado.APMATERNO = oEmpleadoCLS.apMaterno;
                     oEmpleado.FECHACONTRATO = oEmpleadoCLS.fechaContrato;
+                    oEmpleado.SUELDO = oEmpleadoCLS.sueldo;
                     oEmpleado.IIDTIPOUSUARIO = oEmpleadoCLS.iidTipoUsuario;
                     oEmpleado.IIDTIPOCONTRATO = oEmpleadoCLS.iidTipoContrato;
                     oEmpleado.IIDSEXO = oEmpleadoCLS.iidsexo;
