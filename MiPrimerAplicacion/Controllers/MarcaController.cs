@@ -49,6 +49,26 @@ namespace MiPrimerAplicacion.Controllers
             }
             return RedirectToAction("Index");
         }
+        
+        public ActionResult Editar(int id)
+        {
+            MarcaCLS oMarcaCLS = new MarcaCLS();
+            using (var db = new BDPasajesEntities())
+            {
+                var oMarca = db.Marca.First(p => p.IIDMARCA.Equals(id)); 
+                //Marca oMarca = db.Marca.Where(p => p.IIDMARCA.Equals(id)).First();
+
+                oMarcaCLS.iidmarca = oMarca.IIDMARCA;
+                oMarcaCLS.nombre = oMarca.NOMBRE;
+                oMarcaCLS.descripcion = oMarca.DESCRIPCION;
+            }
+            return View(oMarcaCLS);
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            return View();
+        }
 
         //muestra la vista
         public ActionResult Agregar()
