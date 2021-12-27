@@ -31,6 +31,11 @@ namespace MiPrimerAplicacion.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required]
         public DateTime fechaContrato { get; set; }
+        
+        [Display(Name = "Sueldo")]
+        [Range(1,100000,ErrorMessage = "Valor fuera de rango")]
+        [Required]
+        public double sueldo { get; set; }
 
         [Display(Name = "Tipo Usuario")]
         [Required]
