@@ -33,6 +33,34 @@ namespace MiPrimerAplicacion.Controllers
             return View(listaEmpleado);
         }
 
+        [HttpPost]
+        public ActionResult Agregar(EmpleadoCLS oEmpleadoCLS)
+        {
+            if (!ModelState.IsValid)
+            {
+                listarCombos();
+                return View(oEmpleadoCLS);
+            }
+            else
+            {
+                using (var db = new BDPasajesEntities())
+                {
+                    Empleado oEmpleado = new Empleado();
+                    oEmpleado.NOMBRE = oEmpleadoCLS.nombre;
+                    oEmpleado.APPATERNO = oEmpleadoCLS.apPaterno;
+                    oEmpleado.APMATERNO = oEmpleadoCLS.apMaterno;
+                    oEmpleado.FECHACONTRATO = oEmpleadoCLS.fechaContrato;
+                    oEmpleado.IIDTIPOUSUARIO = oEmpleadoCLS.iidTipoUsuario;
+                    oEmpleado.IIDTIPOCONTRATO = oEmpleadoCLS.iidTipoContrato;
+                    oEmpleado.IIDSEXO = oEmpleadoCLS.iidsexo;
+                    oEmpleado.BHABILITADO = 1;
+                    db.Empleado.Add(oEmpleado);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("Index");
+        }
+        
         public void listarComboSexo()
         {
             //agregar
