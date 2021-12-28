@@ -56,6 +56,22 @@ namespace MiPrimerAplicacion.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Editar(int id)
+        {
+            var oSucursalCLS = new SucursalCLS();
+            using (var db = new BDPasajesEntities())
+            {
+                var oSucursal = db.Sucursal.First(p => p.IIDSUCURSAL.Equals(id));
+                oSucursalCLS.iidsucursal = oSucursal.IIDSUCURSAL;
+                oSucursalCLS.nombre = oSucursal.NOMBRE;
+                oSucursalCLS.direccion = oSucursal.DIRECCION;
+                oSucursalCLS.telefono = oSucursal.TELEFONO;
+                oSucursalCLS.email = oSucursal.EMAIL;
+                oSucursalCLS.fechaapertura = (DateTime)oSucursal.FECHAAPERTURA;
+            }
+            return View(oSucursalCLS);
+        }
+
         public ActionResult Agregar()
         {
             return View();

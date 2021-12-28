@@ -263,6 +263,7 @@
     <Content Include="Views\Bus\Index.cshtml" />
     <Content Include="Views\Empleado\Agregar.cshtml" />
     <Content Include="Views\Marca\Editar.cshtml" />
+    <Content Include="Views\Sucursal\Editar.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
