@@ -32,6 +32,7 @@ namespace MiPrimerAplicacion.Models
         public string email { get; set; }
 
         [Display(Name = "Direccion")]
+        [DataType(DataType.MultilineText)]
         [Required]
         [StringLength(200,ErrorMessage ="La longitud maxima es 200")]
         public string direccion { get; set; }

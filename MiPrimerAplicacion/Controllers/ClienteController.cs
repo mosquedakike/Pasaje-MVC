@@ -80,6 +80,30 @@ namespace MiPrimerAplicacion.Controllers
             }
         }
 
+        public ActionResult Editar(int id)
+        {
+            ClienteCLS oClienteCLS = new ClienteCLS();
+            using (var db = new BDPasajesEntities())
+            {
+                var oCliente = db.Cliente.First(p => p.IIDCLIENTE.Equals(id));
+                oCliente.NOMBRE = oClienteCLS.nombre;
+                oCliente.APPATERNO = oClienteCLS.appaterno;
+                oCliente.APMATERNO = oClienteCLS.apmaterno;
+                oCliente.EMAIL = oClienteCLS.email;
+                oCliente.DIRECCION = oClienteCLS.direccion;
+                oCliente.IIDSEXO = oClienteCLS.iidsexo;
+                oCliente.TELEFONOFIJO = oClienteCLS.telefonofijo;
+                oCliente.TELEFONOCELULAR = oClienteCLS.telefonocelular;
+            }
+
+            return View(oClienteCLS);
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            return View();
+        }
+
         public ActionResult Agregar()
         {
             llenadoSexo();
