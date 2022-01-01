@@ -54,6 +54,10 @@ namespace MiPrimerAplicacion.Models
         [Display(Name ="Estatus")]
         [Required]
         public int bhabilitado { get; set; }
+        
+        //propiedades adicionales
+        [Display(Name = "Sexo")]
+        public string nombreTipoSexo { get; set; }
 
     }
 }

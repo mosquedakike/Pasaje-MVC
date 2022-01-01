@@ -15,7 +15,9 @@ namespace MiPrimerAplicacion.Controllers
             List<ClienteCLS> listaCliente = null;
             using (var bd = new BDPasajesEntities())
             {
-                listaCliente = (from cliente in bd.Cliente
+                listaCliente = (
+                                from cliente in bd.Cliente
+                                join tiposexo in bd.Sexo on cliente.IIDSEXO equals tiposexo.IIDSEXO 
                                 where cliente.BHABILITADO == 1
                                 select new ClienteCLS
                                 {
@@ -25,7 +27,7 @@ namespace MiPrimerAplicacion.Controllers
                                     apmaterno = cliente.APMATERNO,
                                     email = cliente.EMAIL,
                                     direccion = cliente.DIRECCION,
-                                    iidsexo = (int)cliente.IIDSEXO,
+                                    nombreTipoSexo = tiposexo.NOMBRE,
                                     telefonofijo = cliente.TELEFONOFIJO,
                                     telefonocelular = cliente.TELEFONOCELULAR,
                                     bhabilitado = (int)cliente.BHABILITADO
